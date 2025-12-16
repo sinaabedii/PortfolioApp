@@ -1,7 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 type PermissionType = 'camera' | 'gallery' | 'location' | 'notifications';
 
+declare const window: any;
+declare const navigator: any;
+declare const Notification: any;
+
 export const requestPermission = async (type: PermissionType): Promise<boolean> => {
-  // Web permissions are handled differently
+  if (typeof window === 'undefined') return true;
+  
   if (type === 'notifications' && 'Notification' in window) {
     const result = await Notification.requestPermission();
     return result === 'granted';
@@ -14,11 +20,12 @@ export const requestPermission = async (type: PermissionType): Promise<boolean> 
       );
     });
   }
-  // Camera and gallery permissions are implicit on web
   return true;
 };
 
 export const checkPermission = async (type: PermissionType): Promise<boolean> => {
+  if (typeof window === 'undefined') return true;
+  
   if (type === 'notifications' && 'Notification' in window) {
     return Notification.permission === 'granted';
   }
