@@ -15,8 +15,8 @@ const babelLoaderConfiguration = {
   use: {
     loader: 'babel-loader',
     options: {
-      presets: ['module:@react-native/babel-preset'],
-      plugins: ['react-native-web'],
+      configFile: path.resolve(__dirname, 'babel.config.js'),
+      cacheDirectory: true,
     },
   },
 };
