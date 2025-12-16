@@ -1,4 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useCallback } from 'react';
+
+declare const document: any;
+declare const URL: any;
 
 interface Asset {
   uri: string;
@@ -26,8 +30,8 @@ export const useImagePicker = (): UseImagePickerReturn => {
       const input = document.createElement('input');
       input.type = 'file';
       input.accept = 'image/*';
-      input.onchange = (e) => {
-        const file = (e.target as HTMLInputElement).files?.[0];
+      input.onchange = (e: any) => {
+        const file = e.target?.files?.[0];
         if (file) {
           const uri = URL.createObjectURL(file);
           setImage({ uri, fileName: file.name, type: file.type });
