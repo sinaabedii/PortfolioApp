@@ -1,0 +1,72 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "retry": "Reintentar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "confirm": "Confirmar",
+    "search": "Buscar",
+    "noResults": "No se encontraron resultados",
+    "offline": "Estás sin conexión"
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "logout": "Cerrar sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "resetPassword": "Restablecer contraseña",
+    "noAccount": "¿No tienes cuenta?",
+    "hasAccount": "¿Ya tienes cuenta?",
+    "signUp": "Registrarse",
+    "signIn": "Iniciar sesión",
+    "biometricPrompt": "Autenticar con biometría"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "welcome": "¡Bienvenido, {{name}}!",
+    "stats": "Estadísticas",
+    "recentActivity": "Actividad reciente"
+  },
+  "chat": {
+    "title": "Mensajes",
+    "newMessage": "Nuevo mensaje",
+    "typeMessage": "Escribe un mensaje...",
+    "send": "Enviar",
+    "online": "En línea",
+    "offline": "Desconectado",
+    "typing": "escribiendo..."
+  },
+  "profile": {
+    "title": "Perfil",
+    "editProfile": "Editar perfil",
+    "bio": "Biografía",
+    "phone": "Teléfono",
+    "changePhoto": "Cambiar foto"
+  },
+  "settings": {
+    "title": "Configuración",
+    "theme": "Tema",
+    "language": "Idioma",
+    "notifications": "Notificaciones",
+    "biometric": "Autenticación biométrica",
+    "darkMode": "Modo oscuro",
+    "lightMode": "Modo claro",
+    "systemMode": "Predeterminado del sistema",
+    "about": "Acerca de",
+    "version": "Versión"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "invalidEmail": "Correo electrónico inválido",
+    "passwordMin": "La contraseña debe tener al menos 8 caracteres",
+    "passwordMatch": "Las contraseñas deben coincidir"
+  }
+}

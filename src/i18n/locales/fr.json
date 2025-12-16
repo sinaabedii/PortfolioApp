@@ -1,0 +1,72 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "confirm": "Confirmer",
+    "search": "Rechercher",
+    "noResults": "Aucun résultat trouvé",
+    "offline": "Vous êtes hors ligne"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "logout": "Déconnexion",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "forgotPassword": "Mot de passe oublié?",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "noAccount": "Vous n'avez pas de compte?",
+    "hasAccount": "Vous avez déjà un compte?",
+    "signUp": "S'inscrire",
+    "signIn": "Se connecter",
+    "biometricPrompt": "Authentifier avec la biométrie"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "welcome": "Bienvenue, {{name}}!",
+    "stats": "Statistiques",
+    "recentActivity": "Activité récente"
+  },
+  "chat": {
+    "title": "Messages",
+    "newMessage": "Nouveau message",
+    "typeMessage": "Tapez un message...",
+    "send": "Envoyer",
+    "online": "En ligne",
+    "offline": "Hors ligne",
+    "typing": "écrit..."
+  },
+  "profile": {
+    "title": "Profil",
+    "editProfile": "Modifier le profil",
+    "bio": "Bio",
+    "phone": "Téléphone",
+    "changePhoto": "Changer la photo"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "theme": "Thème",
+    "language": "Langue",
+    "notifications": "Notifications",
+    "biometric": "Authentification biométrique",
+    "darkMode": "Mode sombre",
+    "lightMode": "Mode clair",
+    "systemMode": "Par défaut du système",
+    "about": "À propos",
+    "version": "Version"
+  },
+  "validation": {
+    "required": "Ce champ est obligatoire",
+    "invalidEmail": "Adresse e-mail invalide",
+    "passwordMin": "Le mot de passe doit contenir au moins 8 caractères",
+    "passwordMatch": "Les mots de passe doivent correspondre"
+  }
+}
