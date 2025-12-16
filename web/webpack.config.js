@@ -10,10 +10,8 @@ const babelLoaderConfiguration = {
     srcDirectory,
     path.resolve(appDirectory, 'App.tsx'),
     path.resolve(appDirectory, 'index.web.js'),
-    path.resolve(appDirectory, 'node_modules/react-native-vector-icons'),
-    path.resolve(appDirectory, 'node_modules/react-native-reanimated'),
-    path.resolve(appDirectory, 'node_modules/react-native-gesture-handler'),
   ],
+  exclude: /node_modules/,
   use: {
     loader: 'babel-loader',
     options: {
@@ -45,6 +43,7 @@ module.exports = {
     extensions: ['.web.tsx', '.web.ts', '.tsx', '.ts', '.web.js', '.js', '.json'],
     alias: {
       'react-native$': 'react-native-web',
+      'react-native-image-picker': false,
       '@store': path.resolve(srcDirectory, 'store'),
       '@services': path.resolve(srcDirectory, 'services'),
       '@navigation': path.resolve(srcDirectory, 'navigation'),
