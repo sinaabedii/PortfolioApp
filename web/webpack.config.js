@@ -2,15 +2,17 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const appDirectory = path.resolve(__dirname, '../');
+const srcDirectory = path.resolve(appDirectory, 'src');
 
 const babelLoaderConfiguration = {
   test: /\.(js|jsx|ts|tsx)$/,
   include: [
-    path.resolve(appDirectory, 'src'),
+    srcDirectory,
     path.resolve(appDirectory, 'App.tsx'),
     path.resolve(appDirectory, 'index.web.js'),
     path.resolve(appDirectory, 'node_modules/react-native-vector-icons'),
     path.resolve(appDirectory, 'node_modules/react-native-reanimated'),
+    path.resolve(appDirectory, 'node_modules/react-native-gesture-handler'),
   ],
   use: {
     loader: 'babel-loader',
@@ -26,35 +28,46 @@ const imageLoaderConfiguration = {
   use: { loader: 'url-loader', options: { name: '[name].[ext]' } },
 };
 
+const fontLoaderConfiguration = {
+  test: /\.(woff|woff2|eot|ttf|otf)$/,
+  type: 'asset/resource',
+};
+
 module.exports = {
   entry: path.resolve(appDirectory, 'index.web.js'),
   output: {
     filename: 'bundle.[contenthash].js',
     path: path.resolve(appDirectory, 'dist'),
     publicPath: '/',
+    clean: true,
   },
   resolve: {
-    extensions: ['.web.tsx', '.web.ts', '.tsx', '.ts', '.web.js', '.js'],
+    extensions: ['.web.tsx', '.web.ts', '.tsx', '.ts', '.web.js', '.js', '.json'],
     alias: {
       'react-native$': 'react-native-web',
-      '@': path.resolve(appDirectory, 'src'),
-      '@components': path.resolve(appDirectory, 'src/components'),
-      '@screens': path.resolve(appDirectory, 'src/screens'),
-      '@navigation': path.resolve(appDirectory, 'src/navigation'),
-      '@store': path.resolve(appDirectory, 'src/store'),
-      '@hooks': path.resolve(appDirectory, 'src/hooks'),
-      '@services': path.resolve(appDirectory, 'src/services'),
-      '@utils': path.resolve(appDirectory, 'src/utils'),
-      '@theme': path.resolve(appDirectory, 'src/theme'),
-      '@types': path.resolve(appDirectory, 'src/types'),
-      '@constants': path.resolve(appDirectory, 'src/constants'),
-      '@context': path.resolve(appDirectory, 'src/context'),
-      '@i18n': path.resolve(appDirectory, 'src/i18n'),
+      '@store': path.resolve(srcDirectory, 'store'),
+      '@services': path.resolve(srcDirectory, 'services'),
+      '@navigation': path.resolve(srcDirectory, 'navigation'),
+      '@context': path.resolve(srcDirectory, 'context'),
+      '@hooks': path.resolve(srcDirectory, 'hooks'),
+      '@screens': path.resolve(srcDirectory, 'screens'),
+      '@components': path.resolve(srcDirectory, 'components'),
+      '@utils': path.resolve(srcDirectory, 'utils'),
+      '@theme': path.resolve(srcDirectory, 'theme'),
+      '@types': path.resolve(srcDirectory, 'types'),
+      '@constants': path.resolve(srcDirectory, 'constants'),
+      '@i18n': path.resolve(srcDirectory, 'i18n'),
+      '@assets': path.resolve(srcDirectory, 'assets'),
+      '@': srcDirectory,
     },
   },
-  module: { rules: [babelLoaderConfiguration, imageLoaderConfiguration] },
+  module: {
+    rules: [babelLoaderConfiguration, imageLoaderConfiguration, fontLoaderConfiguration],
+  },
   plugins: [
-    new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'index.html') }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'index.html'),
+    }),
   ],
   devServer: {
     static: { directory: path.join(__dirname, 'public') },
